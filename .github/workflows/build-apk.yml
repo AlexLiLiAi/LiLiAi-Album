@@ -29,7 +29,8 @@ jobs:
 
       - name: Install Android SDK packages
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
-
+      - name: Find APK
+        run: find app -type f -name "* .apk" -ls
       - name: Build APK
         run: gradle --no-daemon :app:assembleDebug
 
